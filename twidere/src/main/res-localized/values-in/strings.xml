@@ -190,7 +190,7 @@
     <string name="api_url_format">Format URL API</string>
     <string name="app_description">Aplikasi Twitter anda</string>
     <!-- App name, normally you don't need to translate this. -->
-    <string name="app_name">Twidere</string>
+    <string name="app_name">Twitter</string>
     <string name="app_restart_confirm">Twidere akan memulai ulang untuk menerapkan pengaturan.</string>
     <string name="app_terminate_confirm">Twidere akan berhenti untuk menerapkan setting.</string>
     <string name="appearance">Tampilan</string>

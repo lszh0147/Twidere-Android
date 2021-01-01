@@ -190,7 +190,7 @@
     <string name="api_url_format">รูปแบบ URL ของ API</string>
     <string name="app_description">แอพทวิตเตอร์ของคุณเอง</string>
     <!-- App name, normally you don't need to translate this. -->
-    <string name="app_name">Twidere</string>
+    <string name="app_name">Twitter</string>
     <string name="app_restart_confirm">เริ่มต้น Twidere ใหม่เพื่อปรับใช้การตั้งค่า</string>
     <string name="app_terminate_confirm">Twidere จะเริ่มต้นใหม่เพื่อใช้การตั้งค่า</string>
     <string name="appearance">หน้าตา</string>

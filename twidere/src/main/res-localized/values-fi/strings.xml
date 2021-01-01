@@ -86,7 +86,7 @@
     <string name="api_url_format">API-URL:n muoto</string>
     <string name="app_description">Oma Twitter-sovelluksesi</string>
     <!-- App name, normally you don't need to translate this. -->
-    <string name="app_name">Twidere</string>
+    <string name="app_name">Twitter</string>
     <string name="app_restart_confirm">Twidere käynnistyy uudelleen käyttääkseen asetuksia.</string>
     <string name="appearance">Ulkonäkö</string>
     <string name="auth_type_basic">Perus</string>

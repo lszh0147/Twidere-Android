@@ -190,7 +190,7 @@
     <string name="api_url_format">Formato URL de la API</string>
     <string name="app_description">Tu propia aplicación de Twitter</string>
     <!-- App name, normally you don't need to translate this. -->
-    <string name="app_name">Twidere</string>
+    <string name="app_name">Twitter</string>
     <string name="app_restart_confirm">Twidere se reiniciará para aplicar los ajustes.</string>
     <string name="app_terminate_confirm">Twidere se reiniciará para aplicar los cambios.</string>
     <string name="appearance">Apariencia</string>

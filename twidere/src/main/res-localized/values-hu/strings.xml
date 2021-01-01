@@ -182,7 +182,7 @@
     <string name="api_url_format">API URL formátum</string>
     <string name="app_description">A te Twitter alkalmazásod</string>
     <!-- App name, normally you don't need to translate this. -->
-    <string name="app_name">Twidere</string>
+    <string name="app_name">Twitter</string>
     <string name="app_restart_confirm">A Twidere újraindul a beállítások alkalmazásához.</string>
     <string name="app_terminate_confirm">A Twidere újraindul, hogy a beállítások alkalmazásra kerüljenek.</string>
     <string name="appearance">Megjelenés</string>

@@ -86,7 +86,7 @@
     <string name="api_url_format">Формат API URL</string>
     <string name="app_description">Свій власний додаток Twitter</string>
     <!-- App name, normally you don't need to translate this. -->
-    <string name="app_name">Twidere</string>
+    <string name="app_name">Twitter</string>
     <string name="app_restart_confirm">Twidere буде перезавантажено для прйняття налаштувань.</string>
     <string name="appearance">Зовнішній вигляд</string>
     <string name="auth_type_basic">Basic</string>

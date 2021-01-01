@@ -190,7 +190,7 @@
     <string name="api_url_format">API URL 格式</string>
     <string name="app_description">属于您的 Twitter 应用</string>
     <!-- App name, normally you don't need to translate this. -->
-    <string name="app_name">Twidere</string>
+    <string name="app_name">Twitter</string>
     <string name="app_restart_confirm">Twidere 将重启以应用设置。</string>
     <string name="app_terminate_confirm">Twidere 将退出以应用设置。</string>
     <string name="appearance">外观</string>

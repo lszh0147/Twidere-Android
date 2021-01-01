@@ -69,35 +69,43 @@ android {
         }
     }
 
-    def file = rootProject.file('private/signing.properties')
-    def hasSigningProps = file.exists()
+//    def file = rootProject.file('private/signing.properties')
+//    def hasSigningProps = file.exists()
 
+//    signingConfigs {
+//        if (hasSigningProps) {
+//            twidere {
+//                Properties signingProp = new Properties()
+//                signingProp.load(file.newInputStream())
+//                storeFile = rootProject.file(signingProp.get('storeFile'))
+//                storePassword = (String) signingProp.get('storePassword')
+//                keyAlias = (String) signingProp.get('keyAlias')
+//                keyPassword = (String) signingProp.get('keyPassword')
+//            }
+//        }
+//    }
     signingConfigs {
-        if (hasSigningProps) {
-            twidere {
-                Properties signingProp = new Properties()
-                signingProp.load(file.newInputStream())
-                storeFile = rootProject.file(signingProp.get('storeFile'))
-                storePassword = (String) signingProp.get('storePassword')
-                keyAlias = (String) signingProp.get('keyAlias')
-                keyPassword = (String) signingProp.get('keyPassword')
-            }
+        release {
+            storeFile file("TestKey.jks")
+            storePassword "123321"
+            keyAlias "Test"
+            keyPassword "123321"
         }
     }
 
     buildTypes {
         debug {
-            if (hasSigningProps) {
-                signingConfig signingConfigs.twidere
-            }
-
+//            if (hasSigningProps) {
+//                signingConfig signingConfigs.twidere
+//            }
+            signingConfig signingConfigs.release
             resValue("bool", "debug", "true")
         }
         release {
-            if (hasSigningProps) {
-                signingConfig signingConfigs.twidere
-            }
-
+//            if (hasSigningProps) {
+//                signingConfig signingConfigs.twidere
+//            }
+            signingConfig signingConfigs.release
             minifyEnabled false
             shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'

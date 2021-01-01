@@ -84,7 +84,7 @@
     <string name="and_N_more">y <xliff:g id="count">%d</xliff:g> más</string>
     <string name="app_description">La to aplicación pa Twitter</string>
     <!-- App name, normally you don't need to translate this. -->
-    <string name="app_name">Twidere</string>
+    <string name="app_name">Twitter</string>
     <string name="app_restart_confirm">Twidere va reaniciase p\'aplicar los axustes.</string>
     <string name="app_terminate_confirm">Twidere va colar p\'aplicar los axustes.</string>
     <string name="appearance">Aspeutu</string>

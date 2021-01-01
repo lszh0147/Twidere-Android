@@ -47,7 +47,7 @@
     <!-- [verb] Action for unblocking user -->
     <string name="add_account">Rnu amiḍan</string>
     <!-- App name, normally you don't need to translate this. -->
-    <string name="app_name">Twidere</string>
+    <string name="app_name">Twitter</string>
     <!-- [noun] Count label for retweets, e.g. (N retweets)-->
     <string name="ellipsis">&#8230;</string>
     <!-- Enhanced (paid) features description -->
