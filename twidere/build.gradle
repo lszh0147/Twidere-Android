@@ -5,17 +5,17 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'imgenie'
 
 buildscript {
-    ext {
-        enableGoogleVariant = project.file('google-services.json').exists()
-    }
+//    ext {
+//        enableGoogleVariant = false
+//    }
     repositories {
         maven { url "https://jitpack.io" }
         jcenter()
-        if (enableGoogleVariant) {
-            // START Non-FOSS component
-            google()
-            // END Non-FOSS component
-        }
+//        if (enableGoogleVariant) {
+//            // START Non-FOSS component
+//            google()
+//            // END Non-FOSS component
+//        }
     }
 
     dependencies {
@@ -23,11 +23,11 @@ buildscript {
         classpath "org.jetbrains.kotlin:kotlin-android-extensions:${kotlinVersion}"
         classpath 'com.github.mariotaku:imgenie-plugin:0.2.6'
 
-        if (enableGoogleVariant) {
-            // START Non-FOSS component
-            classpath 'com.google.gms:google-services:4.3.3'
-            // END Non-FOSS component
-        }
+//        if (enableGoogleVariant) {
+//            // START Non-FOSS component
+//            classpath 'com.google.gms:google-services:4.3.3'
+//            // END Non-FOSS component
+//        }
     }
 }
 
@@ -53,17 +53,21 @@ android {
         buildConfigField 'boolean', 'SHOW_CUSTOM_TOKEN_DIALOG', 'Boolean.parseBoolean("false")'
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        ndk{
+            abiFilters "arm64-v8a"
+        }
     }
 
     flavorDimensions 'channel'
     productFlavors {
-        if (enableGoogleVariant) {
-            // START Non-FOSS component
-            google {
-                dimension 'channel'
-            }
-            // END Non-FOSS component
-        }
+//        if (enableGoogleVariant) {
+//            // START Non-FOSS component
+//            google {
+//                dimension 'channel'
+//            }
+//            // END Non-FOSS component
+//        }
         fdroid {
             dimension 'channel'
         }
@@ -292,33 +296,33 @@ dependencies {
 
 
 /** Flavor dependencies **/
-    fdroidImplementation 'org.osmdroid:osmdroid-android:5.6.5'
-    fdroidImplementation 'ch.acra:acra:4.11'
+//    fdroidImplementation 'org.osmdroid:osmdroid-android:5.6.5'//开源地图库
+//    fdroidImplementation 'ch.acra:acra:4.11'
 
-    if (enableGoogleVariant) {
-        // START Non-FOSS component
-        googleImplementation "com.google.android.gms:play-services-ads:${libVersions['PlayServices']}"
-        googleImplementation "com.google.android.gms:play-services-auth:${libVersions['PlayServices']}"
-        googleImplementation "com.google.android.gms:play-services-maps:${libVersions['PlayServices']}"
-        googleImplementation 'com.google.maps.android:android-maps-utils:0.6.2'
-        googleImplementation 'com.anjlab.android.iab.v3:library:1.1.0'
-        googleImplementation 'com.dropbox.core:dropbox-core-sdk:3.1.3'
-        googleImplementation('com.google.apis:google-api-services-drive:v3-rev195-1.25.0') {
-            exclude group: 'org.apache.httpcomponents'
-        }
-        implementation 'com.google.guava:guava:28.2-android'
-        // END Non-FOSS component
-    }
+//    if (enableGoogleVariant) {
+//        // START Non-FOSS component
+//        googleImplementation "com.google.android.gms:play-services-ads:${libVersions['PlayServices']}"
+//        googleImplementation "com.google.android.gms:play-services-auth:${libVersions['PlayServices']}"
+//        googleImplementation "com.google.android.gms:play-services-maps:${libVersions['PlayServices']}"
+//        googleImplementation 'com.google.maps.android:android-maps-utils:0.6.2'
+//        googleImplementation 'com.anjlab.android.iab.v3:library:1.1.0'
+//        googleImplementation 'com.dropbox.core:dropbox-core-sdk:3.1.3'
+//        googleImplementation('com.google.apis:google-api-services-drive:v3-rev195-1.25.0') {
+//            exclude group: 'org.apache.httpcomponents'
+//        }
+//        implementation 'com.google.guava:guava:28.2-android'
+//        // END Non-FOSS component
+//    }
 
-    debugImplementation "com.facebook.stetho:stetho:${libVersions['Stetho']}"
-    debugImplementation "com.facebook.stetho:stetho-okhttp3:${libVersions['Stetho']}"
-    debugImplementation 'com.github.mariotaku:StethoBeanShellREPL:0.5'
-    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.3'
-    debugImplementation('com.jayway.jsonpath:json-path:2.4.0') {
-        exclude group: 'net.minidev', module: 'json-smart'
-    }
-    // Stetho dependency, see https://g.co/androidstudio/app-test-app-conflict
-    debugImplementation 'com.google.code.findbugs:jsr305:3.0.2'
+//    debugImplementation "com.facebook.stetho:stetho:${libVersions['Stetho']}"
+//    debugImplementation "com.facebook.stetho:stetho-okhttp3:${libVersions['Stetho']}"
+//    debugImplementation 'com.github.mariotaku:StethoBeanShellREPL:0.5'
+//    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.3'
+//    debugImplementation('com.jayway.jsonpath:json-path:2.4.0') {
+//        exclude group: 'net.minidev', module: 'json-smart'
+//    }
+//    // Stetho dependency, see https://g.co/androidstudio/app-test-app-conflict
+//    debugImplementation 'com.google.code.findbugs:jsr305:3.0.2'
 
 
 /** Testing **/
@@ -330,8 +334,8 @@ dependencies {
     androidTestImplementation 'com.google.code.findbugs:jsr305:3.0.2'
 }
 
-if (enableGoogleVariant) {
-// START Non-FOSS component
-    apply plugin: 'com.google.gms.google-services'
-// END Non-FOSS component
-}
+//if (enableGoogleVariant) {
+//// START Non-FOSS component
+//    apply plugin: 'com.google.gms.google-services'
+//// END Non-FOSS component
+//}

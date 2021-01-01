@@ -24,9 +24,9 @@ import android.app.Dialog
 import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
-import android.nfc.NdefMessage
-import android.nfc.NdefRecord
-import android.nfc.NfcAdapter.CreateNdefMessageCallback
+//import android.nfc.NdefMessage
+//import android.nfc.NdefRecord
+//import android.nfc.NfcAdapter.CreateNdefMessageCallback
 import android.os.Bundle
 import androidx.loader.app.LoaderManager.LoaderCallbacks
 import androidx.loader.content.FixedAsyncTaskLoader
@@ -136,12 +136,12 @@ class UserListFragment : AbsToolbarTabPagesFragment(), OnClickListener,
         val activity = activity
         setHasOptionsMenu(true)
 
-        if (activity != null) {
-            Utils.setNdefPushMessageCallback(activity, CreateNdefMessageCallback {
-                val userList = userList ?: return@CreateNdefMessageCallback null
-                NdefMessage(arrayOf(NdefRecord.createUri(LinkCreator.getTwitterUserListLink(userList.user_screen_name, userList.name))))
-            })
-        }
+//        if (activity != null) {
+//            Utils.setNdefPushMessageCallback(activity, CreateNdefMessageCallback {
+//                val userList = userList ?: return@CreateNdefMessageCallback null
+//                NdefMessage(arrayOf(NdefRecord.createUri(LinkCreator.getTwitterUserListLink(userList.user_screen_name, userList.name))))
+//            })
+//        }
 
         getUserListInfo(false)
     }

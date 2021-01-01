@@ -237,10 +237,10 @@ class StatusFragment : BaseFragment(), LoaderCallbacks<SingleResponse<Parcelable
         val context = context ?: return
         val activity = activity ?: return
         setHasOptionsMenu(true)
-        Utils.setNdefPushMessageCallback(activity, CreateNdefMessageCallback {
-            val status = status ?: return@CreateNdefMessageCallback null
-            NdefMessage(arrayOf(NdefRecord.createUri(LinkCreator.getStatusWebLink(status))))
-        })
+//        Utils.setNdefPushMessageCallback(activity, CreateNdefMessageCallback {
+//            val status = status ?: return@CreateNdefMessageCallback null
+//            NdefMessage(arrayOf(NdefRecord.createUri(LinkCreator.getStatusWebLink(status))))
+//        })
         adapter = StatusDetailsAdapter(this)
         layoutManager = StatusListLinearLayoutManager(context, recyclerView)
         mItemDecoration = StatusDividerItemDecoration(context, adapter, layoutManager.orientation).apply {

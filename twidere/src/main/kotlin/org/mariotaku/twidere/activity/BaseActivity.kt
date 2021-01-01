@@ -24,7 +24,7 @@ import android.app.PendingIntent
 import android.content.*
 import android.content.res.Resources
 import android.graphics.Rect
-import android.nfc.NfcAdapter
+//import android.nfc.NfcAdapter
 import android.os.Build
 import android.os.Bundle
 import android.util.AttributeSet
@@ -287,28 +287,28 @@ open class BaseActivity : ChameleonActivity(), IBaseActivity<BaseActivity>, IThe
 
     override fun onResume() {
         super.onResume()
-        val adapter = NfcAdapter.getDefaultAdapter(this)
-        if (adapter != null && adapter.isEnabled) {
-            val handlerFilter = IntentUtils.getWebLinkIntentFilter(this)
-            if (handlerFilter != null) {
-                val linkIntent = Intent(this, WebLinkHandlerActivity::class.java)
-                val intent = PendingIntent.getActivity(this, 0, linkIntent, 0)
-                val intentFilter = IntentFilter(NfcAdapter.ACTION_NDEF_DISCOVERED)
-                for (i in 0 until handlerFilter.countDataSchemes()) {
-                    intentFilter.addDataScheme(handlerFilter.getDataScheme(i))
-                }
-                for (i in 0 until handlerFilter.countDataAuthorities()) {
-                    val authorityEntry = handlerFilter.getDataAuthority(i)
-                    val port = authorityEntry.port
-                    intentFilter.addDataAuthority(authorityEntry.host, if (port < 0) null else port.toString())
-                }
-                try {
-                    adapter.enableForegroundDispatch(this, intent, arrayOf(intentFilter), null)
-                } catch (e: Exception) {
-                    // Ignore if blocked by modified roms
-                }
-            }
-        }
+//        val adapter = NfcAdapter.getDefaultAdapter(this)
+//        if (adapter != null && adapter.isEnabled) {
+//            val handlerFilter = IntentUtils.getWebLinkIntentFilter(this)
+//            if (handlerFilter != null) {
+//                val linkIntent = Intent(this, WebLinkHandlerActivity::class.java)
+//                val intent = PendingIntent.getActivity(this, 0, linkIntent, 0)
+//                val intentFilter = IntentFilter(NfcAdapter.ACTION_NDEF_DISCOVERED)
+//                for (i in 0 until handlerFilter.countDataSchemes()) {
+//                    intentFilter.addDataScheme(handlerFilter.getDataScheme(i))
+//                }
+//                for (i in 0 until handlerFilter.countDataAuthorities()) {
+//                    val authorityEntry = handlerFilter.getDataAuthority(i)
+//                    val port = authorityEntry.port
+//                    intentFilter.addDataAuthority(authorityEntry.host, if (port < 0) null else port.toString())
+//                }
+//                try {
+//                    adapter.enableForegroundDispatch(this, intent, arrayOf(intentFilter), null)
+//                } catch (e: Exception) {
+//                    // Ignore if blocked by modified roms
+//                }
+//            }
+//        }
 
         val filter = IntentFilter()
         filter.addAction(Intent.ACTION_TIME_TICK)
@@ -323,15 +323,15 @@ open class BaseActivity : ChameleonActivity(), IBaseActivity<BaseActivity>, IThe
 
         unregisterReceiverSafe(nightTimeChangedReceiver)
 
-        val adapter = NfcAdapter.getDefaultAdapter(this)
-        if (adapter != null && adapter.isEnabled) {
-            try {
-                adapter.disableForegroundDispatch(this)
-            } catch (e: Exception) {
-                // Ignore if blocked by modified roms
-            }
-
-        }
+//        val adapter = NfcAdapter.getDefaultAdapter(this)
+//        if (adapter != null && adapter.isEnabled) {
+//            try {
+//                adapter.disableForegroundDispatch(this)
+//            } catch (e: Exception) {
+//                // Ignore if blocked by modified roms
+//            }
+//
+//        }
         actionHelper.dispatchOnPause()
         super.onPause()
     }

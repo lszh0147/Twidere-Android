@@ -31,8 +31,8 @@ import android.graphics.Rect
 import android.graphics.drawable.Drawable
 import android.net.ConnectivityManager
 import android.net.Uri
-import android.nfc.NfcAdapter
-import android.nfc.NfcAdapter.CreateNdefMessageCallback
+//import android.nfc.NfcAdapter
+//import android.nfc.NfcAdapter.CreateNdefMessageCallback
 import android.os.BatteryManager
 import android.os.Bundle
 import androidx.annotation.DrawableRes
@@ -447,17 +447,17 @@ object Utils {
     }
 
 
-    fun setNdefPushMessageCallback(activity: Activity, callback: CreateNdefMessageCallback): Boolean {
-        try {
-            val adapter = NfcAdapter.getDefaultAdapter(activity) ?: return false
-            adapter.setNdefPushMessageCallback(callback, activity)
-            return true
-        } catch (e: SecurityException) {
-            Log.w(LOGTAG, e)
-        }
-
-        return false
-    }
+//    fun setNdefPushMessageCallback(activity: Activity, callback: CreateNdefMessageCallback): Boolean {
+////        try {
+////            val adapter = NfcAdapter.getDefaultAdapter(activity) ?: return false
+////            adapter.setNdefPushMessageCallback(callback, activity)
+////            return true
+////        } catch (e: SecurityException) {
+////            Log.w(LOGTAG, e)
+////        }
+//
+//        return false
+//    }
 
     fun getInsetsTopWithoutActionBarHeight(context: Context, top: Int): Int {
         val actionBarHeight: Int = when (context) {

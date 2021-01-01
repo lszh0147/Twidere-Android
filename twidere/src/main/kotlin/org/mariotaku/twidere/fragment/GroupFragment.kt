@@ -1,9 +1,9 @@
 package org.mariotaku.twidere.fragment
 
 import android.content.Context
-import android.nfc.NdefMessage
-import android.nfc.NdefRecord
-import android.nfc.NfcAdapter
+//import android.nfc.NdefMessage
+//import android.nfc.NdefRecord
+//import android.nfc.NfcAdapter
 import android.os.Bundle
 import androidx.loader.app.LoaderManager.LoaderCallbacks
 import androidx.loader.content.FixedAsyncTaskLoader
@@ -38,12 +38,12 @@ class GroupFragment : AbsToolbarTabPagesFragment(), LoaderCallbacks<SingleRespon
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        activity?.let {
-            Utils.setNdefPushMessageCallback(it, NfcAdapter.CreateNdefMessageCallback {
-            val url = group?.url ?: return@CreateNdefMessageCallback null
-            NdefMessage(arrayOf(NdefRecord.createUri(url)))
-        })
-        }
+//        activity?.let {
+//            Utils.setNdefPushMessageCallback(it, NfcAdapter.CreateNdefMessageCallback {
+//            val url = group?.url ?: return@CreateNdefMessageCallback null
+//            NdefMessage(arrayOf(NdefRecord.createUri(url)))
+//        })
+//        }
 
         getGroupInfo(false)
     }

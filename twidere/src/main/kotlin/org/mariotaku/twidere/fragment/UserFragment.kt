@@ -36,9 +36,9 @@ import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.LayerDrawable
 import android.net.Uri
-import android.nfc.NdefMessage
-import android.nfc.NdefRecord
-import android.nfc.NfcAdapter.CreateNdefMessageCallback
+//import android.nfc.NdefMessage
+//import android.nfc.NdefRecord
+//import android.nfc.NfcAdapter.CreateNdefMessageCallback
 import android.os.Build
 import android.os.Bundle
 import android.os.Parcelable
@@ -683,10 +683,10 @@ class UserFragment : BaseFragment(), OnClickListener, OnLinkClickListener,
         val userKey = args.getParcelable<UserKey?>(EXTRA_USER_KEY)
         val screenName = args.getString(EXTRA_SCREEN_NAME)
 
-        Utils.setNdefPushMessageCallback(activity, CreateNdefMessageCallback {
-            val user = user ?: return@CreateNdefMessageCallback null
-            NdefMessage(arrayOf(NdefRecord.createUri(LinkCreator.getUserWebLink(user))))
-        })
+//        Utils.setNdefPushMessageCallback(activity, CreateNdefMessageCallback {
+//            val user = user ?: return@CreateNdefMessageCallback null
+//            NdefMessage(arrayOf(NdefRecord.createUri(LinkCreator.getUserWebLink(user))))
+//        })
 
 
         userFragmentView.windowInsetsListener = OnApplyWindowInsetsListener listener@ { _, insets ->
