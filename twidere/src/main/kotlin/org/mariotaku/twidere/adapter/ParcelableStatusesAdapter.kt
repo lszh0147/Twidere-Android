@@ -77,7 +77,7 @@ abstract class ParcelableStatusesAdapter(
     final override val linkHighlightingStyle: Int = preferences[linkHighlightOptionKey]
     final override val lightFont: Boolean = preferences[lightFontKey]
     final override val mediaPreviewEnabled: Boolean = Utils.isMediaPreviewEnabled(context, preferences)
-    final override val sensitiveContentEnabled: Boolean = preferences.getBoolean(KEY_DISPLAY_SENSITIVE_CONTENTS, false)
+    final override val sensitiveContentEnabled: Boolean = preferences.getBoolean(KEY_DISPLAY_SENSITIVE_CONTENTS, true)
     private val showCardActions: Boolean = !preferences[hideCardActionsKey]
     private val showCardNumbers: Boolean = !preferences[hideCardNumbersKey]
     private val showLinkPreview: Boolean = preferences[showLinkPreviewKey]

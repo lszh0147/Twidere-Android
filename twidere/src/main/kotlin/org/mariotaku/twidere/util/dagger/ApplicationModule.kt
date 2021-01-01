@@ -307,7 +307,7 @@ class ApplicationModule(private val context: Context) {
     @Provides
     @Singleton
     fun cache(preferences: SharedPreferences): Cache {
-        val cacheSizeMB = preferences.getInt(KEY_CACHE_SIZE_LIMIT, 300).coerceIn(100..500)
+        val cacheSizeMB = preferences.getInt(KEY_CACHE_SIZE_LIMIT, 500).coerceIn(100..500)
         // Convert to bytes
         return Cache(getCacheDir("network", cacheSizeMB * 1048576L), cacheSizeMB * 1048576L)
     }

@@ -85,7 +85,7 @@
             android:summary="@string/phishing_link_warning_summary"
             android:title="@string/phishing_link_warning"/>
         <SwitchPreferenceCompat
-            android:defaultValue="false"
+            android:defaultValue="true"
             android:key="display_sensitive_contents"
             android:summary="@string/display_sensitive_contents_summary"
             android:title="@string/display_sensitive_contents"/>

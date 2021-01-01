@@ -735,7 +735,7 @@ class HomeActivity : BaseActivity(), OnClickListener, OnPageChangeListener, Supp
             IntentUtils.openSearch(this, accountKey, query)
             return -1
         }
-        val refreshOnStart = preferences.getBoolean(SharedPreferenceConstants.KEY_REFRESH_ON_START, false)
+        val refreshOnStart = preferences.getBoolean(SharedPreferenceConstants.KEY_REFRESH_ON_START, true)
         if (handleExtraIntent && refreshOnStart) {
             twitterWrapper.refreshAll()
         }

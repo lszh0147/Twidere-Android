@@ -49,8 +49,8 @@ class DummyItemAdapter(
     override var nameFirst: Boolean = false
     override var lightFont: Boolean = false
     override var profileImageEnabled: Boolean = false
-    override var sensitiveContentEnabled: Boolean = false
-    override var mediaPreviewEnabled: Boolean = false
+    override var sensitiveContentEnabled: Boolean = true
+    override var mediaPreviewEnabled: Boolean = true
     override var showAbsoluteTime: Boolean = false
     override var friendshipClickListener: IUsersAdapter.FriendshipClickListener? = null
     override var requestClickListener: IUsersAdapter.RequestClickListener? = null

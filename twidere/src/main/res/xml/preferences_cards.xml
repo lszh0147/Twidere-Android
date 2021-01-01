@@ -49,7 +49,7 @@
     </org.mariotaku.twidere.preference.EntrySummaryListPreference>
 
     <SwitchPreferenceCompat
-        android:defaultValue="false"
+        android:defaultValue="true"
         android:key="media_preview"
         android:order="25"
         android:title="@string/media_preview">
@@ -59,7 +59,7 @@
     </SwitchPreferenceCompat>
 
     <org.mariotaku.twidere.preference.EntrySummaryListPreference
-        android:defaultValue="crop"
+        android:defaultValue="scale"
         android:entries="@array/entries_media_preview_style"
         android:entryValues="@array/values_media_preview_style"
         android:key="media_preview_style"

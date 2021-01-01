@@ -33,7 +33,7 @@ val nameFirstKey = KBooleanKey(KEY_NAME_FIRST, true)
 val displayProfileImageKey = KBooleanKey(KEY_DISPLAY_PROFILE_IMAGE, true)
 val mediaPreviewKey = KBooleanKey(KEY_MEDIA_PREVIEW, true)
 val bandwidthSavingModeKey = KBooleanKey(KEY_BANDWIDTH_SAVING_MODE, false)
-val displaySensitiveContentsKey = KBooleanKey(KEY_DISPLAY_SENSITIVE_CONTENTS, false)
+val displaySensitiveContentsKey = KBooleanKey(KEY_DISPLAY_SENSITIVE_CONTENTS, true)
 val hideCardActionsKey = KBooleanKey(KEY_HIDE_CARD_ACTIONS, false)
 val iWantMyStarsBackKey = KBooleanKey(KEY_I_WANT_MY_STARS_BACK, false)
 val favoriteConfirmationKey = KBooleanKey(KEY_FAVORITE_CONFIRMATION, false)
@@ -57,7 +57,7 @@ val randomizeAccountNameKey = KBooleanKey(KEY_RANDOMIZE_ACCOUNT_NAME, false)
 val defaultAutoRefreshKey = KBooleanKey(KEY_DEFAULT_AUTO_REFRESH, false)
 val defaultAutoRefreshAskedKey = KBooleanKey("default_auto_refresh_asked", true)
 val unreadCountKey = KBooleanKey(KEY_UNREAD_COUNT, true)
-val drawerToggleKey = KBooleanKey(KEY_DRAWER_TOGGLE, false)
+val drawerToggleKey = KBooleanKey(KEY_DRAWER_TOGGLE, true)
 val fabVisibleKey = KBooleanKey(KEY_FAB_VISIBLE, true)
 val themeKey = KStringKey(KEY_THEME, VALUE_THEME_NAME_LIGHT)
 val themeColorKey = KIntKey(KEY_THEME_COLOR, 0)
@@ -77,7 +77,7 @@ val phishingLinksWaringKey = KBooleanKey(KEY_PHISHING_LINK_WARNING, true)
 val multiColumnWidthKey = KStringKey(KEY_MULTI_COLUMN_TAB_WIDTH, "normal")
 val quickSendKey = KBooleanKey(KEY_QUICK_SEND, false)
 val refreshAfterTweetKey = KBooleanKey(KEY_REFRESH_AFTER_TWEET, false)
-val refreshOnStartKey = KBooleanKey(KEY_REFRESH_ON_START, false)
+val refreshOnStartKey = KBooleanKey(KEY_REFRESH_ON_START, true)
 val homeRefreshMentionsKey = KBooleanKey(KEY_HOME_REFRESH_MENTIONS, true)
 val homeRefreshDirectMessagesKey = KBooleanKey(KEY_HOME_REFRESH_DIRECT_MESSAGES, true)
 val homeRefreshSavedSearchesKey = KBooleanKey(KEY_HOME_REFRESH_SAVED_SEARCHES, true)
@@ -93,7 +93,7 @@ val hideCardNumbersKey = KBooleanKey(KEY_HIDE_CARD_NUMBERS, false)
 val showLinkPreviewKey = KBooleanKey(KEY_SHOW_LINK_PREVIEW, false)
 
 
-object cacheSizeLimitKey : KSimpleKey<Int>(KEY_CACHE_SIZE_LIMIT, 300) {
+object cacheSizeLimitKey : KSimpleKey<Int>(KEY_CACHE_SIZE_LIMIT, 500) {
     override fun read(preferences: SharedPreferences) = preferences.getInt(key, def).coerceIn(100,
             500)
 
@@ -145,12 +145,12 @@ object profileImageStyleKey : KSimpleKey<Int>(KEY_PROFILE_IMAGE_STYLE, ImageShap
 
 }
 
-object mediaPreviewStyleKey : KSimpleKey<Int>(KEY_MEDIA_PREVIEW_STYLE, PreviewStyle.CROP) {
+object mediaPreviewStyleKey : KSimpleKey<Int>(KEY_MEDIA_PREVIEW_STYLE, PreviewStyle.SCALE) {
     override fun read(preferences: SharedPreferences): Int {
         return when (preferences.getString(key, null)) {
             VALUE_MEDIA_PREVIEW_STYLE_SCALE -> PreviewStyle.SCALE
             VALUE_MEDIA_PREVIEW_STYLE_REAL_SIZE -> PreviewStyle.ACTUAL_SIZE
-            else -> PreviewStyle.CROP
+            else -> PreviewStyle.SCALE
         }
     }
 
